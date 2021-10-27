@@ -1,4 +1,4 @@
-package com.example.ocr;
+package com.project.androidocr;
 
 import androidx.appcompat.app.AppCompatActivity;
 
