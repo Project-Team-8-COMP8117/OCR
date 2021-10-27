@@ -27,7 +27,7 @@
         app:layout_constraintBottom_toTopOf="@+id/floatingActionButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textShow"
-        app:srcCompat="@android:drawable/btn_plus" />
+        app:srcCompat="@drawable/icons8_zoom_in_50" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton2"
@@ -39,7 +39,7 @@
         android:onClick="ZoomOut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/floatingActionButton"
-        app:srcCompat="@android:drawable/btn_minus" />
+        app:srcCompat="@drawable/icons8_zoom_out_50" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton3"
