@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     private void dialogAbout() {
         new AlertDialog.Builder(this)
                 .setTitle("About App")
-                .setMessage("This app is made by Achmad Qomarudin.")
+                .setMessage("This app is made by Team 8 for 8117 Project.")
                 .setPositiveButton("CLOSE", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -254,6 +254,11 @@ public class MainActivity extends AppCompatActivity {
 
                     //set text to edit text
                     mResultEt.setText(sb.toString());
+                    String FinalStringToPass = sb.toString();
+                    Intent intent = new Intent(this, TextManipulation.class);
+                    intent.putExtra("textString", FinalStringToPass);
+                    startActivity(intent);
+
                 }
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 //if there is any error show it
