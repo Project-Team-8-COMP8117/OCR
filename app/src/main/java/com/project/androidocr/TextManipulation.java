@@ -16,12 +16,10 @@ public class TextManipulation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent i = getIntent();
-        textData = i.getStringExtra("testString");
-        textData = "textString";
+        textData = i.getStringExtra("textString");
         setContentView(R.layout.activity_text_manipulation);
         TextView textShow = (TextView) findViewById (R.id.textShow);
         textShow.setText(textData);
-
     }
 
     public void ZoomOut (View view) {
