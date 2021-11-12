@@ -6,8 +6,4 @@
         android:title="Add Image"
         app:showAsAction="always"
         android:icon="@drawable/ic_action_image"/>
-
-    <item
-        android:id="@+id/about"
-        android:title="About"/>
 </menu>

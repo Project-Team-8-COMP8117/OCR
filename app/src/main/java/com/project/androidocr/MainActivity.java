@@ -76,9 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 showImageImportDialog();
                 break;
 
-            case R.id.about:
-                dialogAbout();
-                break;
         }
         return true;
     }
