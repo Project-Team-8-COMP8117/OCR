@@ -8,9 +8,13 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Locale;
+import android.speech.tts.TextToSpeech;
+
 public class TextManipulation extends AppCompatActivity {
     private float defFontsize = 14f;
     private String textData = "";
+    TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,16 @@ public class TextManipulation extends AppCompatActivity {
         setContentView(R.layout.activity_text_manipulation);
         TextView textShow = (TextView) findViewById (R.id.textShow);
         textShow.setText(textData);
+
+//      For text2Speech
+        textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int i) {
+                if (i != TextToSpeech.ERROR) {
+                    textToSpeech.setLanguage(new Locale(Locale.getDefault().getLanguage()));
+                }
+            }
+        });
     }
 
     public void ZoomOut (View view) {
@@ -48,4 +62,18 @@ public class TextManipulation extends AppCompatActivity {
         Intent shareIntent = Intent.createChooser(sendIntent, null);
         startActivity(shareIntent);
     }
+
+    public void Text2Speech(View view) {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, textData);
+        sendIntent.setType("text/plain");
+
+        TextView textBox = (TextView) findViewById (R.id.textShow);
+        textToSpeech.speak(textBox.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+
+    }
+
+
+
 }
