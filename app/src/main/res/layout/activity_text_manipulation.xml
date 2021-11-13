@@ -47,13 +47,26 @@
         android:id="@+id/floatingActionButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="43dp"
         android:clickable="true"
+        android:focusable="true"
         android:onClick="Share"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintTop_toBottomOf="@+id/floatingActionButton2"
-        app:srcCompat="@android:drawable/ic_menu_share"
-        android:focusable="true" />
+        app:srcCompat="@android:drawable/ic_menu_share" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="169dp"
+        android:layout_marginEnd="79dp"
+        android:clickable="true"
+        android:onClick="Text2Speech"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton3"
+        app:layout_constraintTop_toBottomOf="@+id/textShow"
+        app:srcCompat="@drawable/icons8_sound_64" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
