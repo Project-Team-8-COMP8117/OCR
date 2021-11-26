@@ -1,30 +1,28 @@
 package com.project.androidocr;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,8 +43,12 @@ public class LoginActivity extends AppCompatActivity {
                 JSONObject jsonBody = new JSONObject();
                 try {
                     jsonBody.put("email", "1rdggkysioroyulwshd@sdvrecft.com");
+                    //Get Password from Text
+                    Toast.makeText(LoginActivity.this, SHA256_Hash.Convert("password"), Toast.LENGTH_SHORT).show();
+
+
                     jsonBody.put("password", "password");
-                } catch (JSONException e) {
+                } catch (JSONException | NoSuchAlgorithmException e) {
                     e.printStackTrace();
                 }
                 final String mRequestBody = jsonBody.toString();
@@ -57,8 +59,22 @@ public class LoginActivity extends AppCompatActivity {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                Toast.makeText(LoginActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
-//                                LoginActivity.this.startActivity(myIntent);
+                                JSONObject resJson = null;
+                                try {
+                                    resJson = new JSONObject(response);
+                                    String uuid = resJson.getJSONObject("user").getString("id").toString();
+//                                    Toast.makeText(LoginActivity.this, uuid, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
+
+                                    SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                                    SharedPreferences.Editor editor = sharedPref.edit();
+                                    editor.putString("UUID", uuid);
+                                    editor.commit();
+                                    LoginActivity.this.startActivity(myIntent);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
                             }
                         }, new Response.ErrorListener() {
                     @Override
