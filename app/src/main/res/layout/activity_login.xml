@@ -8,19 +8,19 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".LoginActivity" >
 
     <EditText
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/loading" />
 
     <EditText
         android:id="@+id/password"
@@ -45,6 +45,14 @@
         android:layout_marginBottom="64dp"
         android:enabled="true"
         android:text="Sign In"
+        android:background="#EEEEF1"
+        android:backgroundTint="#7883F2"
+        android:paddingTop="2sp"
+        android:paddingEnd="2sp"
+        android:paddingBottom="2sp"
+        android:shadowColor="#4B56EF"
+        android:textColor="#FAFAFA"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,5 +72,39 @@
         app:layout_constraintStart_toStartOf="@+id/password"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
+
+    <!--        app:srcCompat="@drawable/user"-->
+
+    <ImageView
+        android:id="@+id/icon_user"
+        android:layout_width="213dp"
+        android:layout_height="208dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="64dp"
+        android:background="#FAFAFA"
+        android:contentDescription=""
+        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="115dp"
+        android:shadowColor="#0C0808"
+        android:text="Not a User? Create Account"
+        android:textColor="#DDFF8200"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        android:onClick="GoToSignUp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
