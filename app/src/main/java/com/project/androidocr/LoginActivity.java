@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,15 +40,17 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
                 // myIntent.putExtra("key", value); //Optional
+                String email = ((EditText)findViewById(R.id.username)).getText().toString();
+                String password = ((EditText)findViewById(R.id.password)).getText().toString();
 
                 JSONObject jsonBody = new JSONObject();
                 try {
-                    jsonBody.put("email", "1rdggkysioroyulwshd@sdvrecft.com");
+                    jsonBody.put("email", email);
                     //Get Password from Text
-                    Toast.makeText(LoginActivity.this, SHA256_Hash.Convert("password"), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(LoginActivity.this, SHA256_Hash.Convert("password"), Toast.LENGTH_SHORT).show();
 
 
-                    jsonBody.put("password", "password");
+                    jsonBody.put("password", SHA256_Hash.Convert("password"));
                 } catch (JSONException | NoSuchAlgorithmException e) {
                     e.printStackTrace();
                 }
