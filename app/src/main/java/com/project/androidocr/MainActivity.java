@@ -90,6 +90,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.addImage:
                 showImageImportDialog();
                 break;
+            case R.id.about:
+                dialogAbout();
+                break;
+            case R.id.contact_us:
+                contactUs();
+                break;
 
         }
         return true;
@@ -106,6 +112,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+
+    private void contactUs()
+    {
+        Intent intent = new Intent(MainActivity.this, Contact.class);
+
+        startActivity(intent);new AlertDialog.Builder(this);
+
     }
 
     private void showImageImportDialog() {

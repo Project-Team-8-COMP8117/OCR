@@ -47,7 +47,6 @@ public class SignUpActivity extends AppCompatActivity {
         signUp_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SignUpActivity.this, "123", Toast.LENGTH_SHORT).show();
 
 //                String name = findViewById(R.id.name).toString();
                 String email = ((EditText)findViewById(R.id.username)).getText().toString();

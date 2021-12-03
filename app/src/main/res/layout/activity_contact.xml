@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Contact">
+
+    <ScrollView
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dip"
+        android:fillViewport="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="2dp"
+                android:background="@android:color/white"
+                android:nestedScrollingEnabled="true"
+                android:orientation="horizontal"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                android:scrollbarAlwaysDrawVerticalTrack="false">
+
+                <!-- Table Heading -->
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:background="?attr/colorPrimary" />
+
+                <!-- Table Data -->
+
+                <TableRow android:background="#9C7474">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="Name"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="Email"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Student ID"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row1Name"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row1email"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/row1SID"
+                        android:textSize="12sp" />
+
+
+                </TableRow>
+
+                <TableRow android:layout_width="match_parent">
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row2Name"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="239dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row2email"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/row2SID"
+                        android:textSize="12sp" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row3Name"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="239dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row3email"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/row3SID"
+                        android:textSize="12sp" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/row4Name"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="239dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row4email"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/row4SID"
+                        android:textSize="12sp" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row5Name"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="239dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row5email"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/row5SID"
+                        android:textSize="12sp" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row6Name"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="239dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row6email"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/row6SID"
+                        android:textSize="12sp" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row7Name"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="239dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row7email"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/row7SID"
+                        android:textSize="12sp" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row8Name"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="239dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="left"
+                        android:padding="10sp"
+                        android:text="@string/row8email"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/row8SID"
+                        android:textSize="12sp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
